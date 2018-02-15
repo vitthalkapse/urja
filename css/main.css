@@ -58,6 +58,7 @@ textarea {
 
 body {
     font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    letter-spacing: .1px;
 }
 
 .wrapper {
@@ -144,10 +145,10 @@ nav a:hover {
 
 .footer-container footer {
     color: white;
-    padding: 20px 0;
+    padding: 5px 0;
 }
 
-h1, h3, p{
+.main-container h1, .main-container h3, .main-container p{
     text-shadow: 1px 1px #FFF;
 }
 
