@@ -126,7 +126,8 @@
 
 	// Background Animation
 
-	var cover = $('.fh5co-cover');
+	var cover1 = $('.fh5co-cover1');
+	var cover2 = $('.fh5co-cover2');
 
 	var backgrounds = [
       'url(./images/cover_bg_1.jpg)', 
@@ -142,20 +143,40 @@
       'url(./images/cover_bg_11.jpg)'];
 
       var current = 0;
+      var i = 0;
 
       function nextBackground() {
+      	
+      	if(i % 2){
+      		console.log(i);
 
-        cover.css(
-            'background',
-        backgrounds[current = ++current % backgrounds.length]);
+      		$( ".fh5co-cover2" ).animate({opacity:0}, 2500)
+      		$( ".fh5co-cover1" ).animate({opacity:1}, 2500)
 
-        cover.css('background-size', 'cover');
+      		cover1.css('background',backgrounds[current = ++current % backgrounds.length]);
+        	cover1.css('background-size', 'cover');
+      	}else{
+      		console.log(i);
+
+      		$( ".fh5co-cover1" ).animate({opacity:0}, 2500)
+      		$( ".fh5co-cover2" ).animate({opacity:1}, 2500)
+
+      		cover2.css('background',backgrounds[current = ++current % backgrounds.length]);
+       		cover2.css('background-size', 'cover');
+      	}
+
+      	i++;
 
         setTimeout(nextBackground, 5000);
     }
+
     setTimeout(nextBackground, 5000);
-    cover.css('background', backgrounds[0]);
-    cover.css('background-size', 'cover');
+    cover1.css('background', backgrounds[0]);
+    cover1.css('background-size', 'cover');
+    $( ".fh5co-cover2" ).animate({opacity:0}, 2500)
+    $( ".fh5co-cover1" ).animate({opacity:1}, 2500)
+
+    // Background Animation End
 	
 
 	// Document on load.
